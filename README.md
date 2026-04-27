@@ -141,29 +141,3 @@ This browser version now ranks actions using more than label matching:
 3. It reinforces edges that were part of successful runs.
 
 That is the GraphRAG advantage in this demo: the graph is not just visualized, it actively changes action selection.
-
-## How This Maps Back To Your Resume Story
-
-From your PDFs, the project story was:
-
-- GraphRAG for memory and structured reasoning,
-- vision-language perception for UI understanding,
-- agent management across components,
-- better behavior than ReAct/Reflexion because the memory persists across steps.
-
-This browser MVP mirrors that story like this:
-
-- `Observation` objects stand in for a VLM output.
-- `GraphMemory` is the persistent memory layer.
-- `GraphRAGAgent` coordinates perception, retrieval, planning, and actions.
-- `GraphRAGBrowserApp` wraps that flow into something you can demonstrate live in a browser.
-
-## Good Next Upgrades
-
-If you want to turn this into a stronger portfolio project, the next upgrades are:
-
-1. Replace the demo environment with a browser automation layer.
-2. Replace the rule-based planner with an LLM policy.
-3. Replace structured observations with screenshot-to-JSON VLM extraction.
-4. Add vector retrieval for node descriptions plus graph traversal for hybrid retrieval.
-5. Persist the graph in Neo4j or a graph database instead of JSON or in-memory storage.
