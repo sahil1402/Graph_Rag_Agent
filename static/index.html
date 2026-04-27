@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphRAG Browser Agent</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="app-shell">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">GraphRAG Autonomous Agent</p>
+        <h1>Type a command. Watch the agent reason through a graph.</h1>
+        <p class="lede">
+          This browser demo turns the original CLI MVP into a command-driven agent workspace with persistent memory,
+          graph-aware decision making, and a live visualization of the graph it builds while working.
+        </p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-label">Memory Nodes</span>
+          <strong id="nodeCount">0</strong>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Memory Edges</span>
+          <strong id="edgeCount">0</strong>
+        </div>
+        <div class="stat-pill success-pill">
+          <span class="stat-label">Status</span>
+          <strong id="runStatus">Ready</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="left-rail">
+        <div class="card command-card">
+          <h2>Command Console</h2>
+          <label class="input-label" for="commandInput">Tell the agent what to do</label>
+          <textarea id="commandInput" rows="4" placeholder="Book a flight from San Francisco to New York"></textarea>
+          <div class="button-row">
+            <button id="runButton" class="primary-button">Run Agent</button>
+            <button id="resetButton" class="secondary-button">Reset Memory</button>
+          </div>
+          <div class="example-wrap">
+            <p class="mini-label">Example commands</p>
+            <div id="exampleButtons" class="example-buttons"></div>
+          </div>
+          <p id="statusMessage" class="status-message">The graph persists across runs, so repeat commands should get smarter.</p>
+        </div>
+
+        <div class="card task-card">
+          <h2>Parsed Task</h2>
+          <div id="taskSummary" class="task-summary empty-state">Run a command to see the parsed intent and task fields.</div>
+        </div>
+      </aside>
+
+      <section class="center-column">
+        <div class="card browser-card">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Simulated Browser</p>
+              <h2 id="browserTitle">No run yet</h2>
+            </div>
+            <span id="intentBadge" class="intent-badge">Idle</span>
+          </div>
+          <p id="browserSummary" class="browser-summary">The final observed page and visible elements will appear here.</p>
+          <div id="browserElements" class="browser-elements"></div>
+        </div>
+
+        <div class="card timeline-card">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Execution Trace</p>
+              <h2>Agent Steps</h2>
+            </div>
+            <span id="stepCountBadge" class="intent-badge neutral-badge">0 steps</span>
+          </div>
+          <div id="stepList" class="step-list empty-state">No run yet. The trace will show how the agent used graph memory to choose actions.</div>
+        </div>
+      </section>
+
+      <aside class="right-rail">
+        <div class="card graph-card">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Graph View</p>
+              <h2>Live Graph Memory</h2>
+            </div>
+            <span class="intent-badge graph-badge">GraphRAG</span>
+          </div>
+          <svg id="graphCanvas" viewBox="0 0 680 520" role="img" aria-label="Graph memory visualization"></svg>
+          <div class="legend">
+            <span><i class="legend-dot screen-dot"></i>Screen</span>
+            <span><i class="legend-dot element-dot"></i>Element</span>
+            <span><i class="legend-dot success-dot"></i>Highlighted path</span>
+          </div>
+        </div>
+
+        <div class="card insights-card">
+          <h2>Why It’s More Accurate</h2>
+          <ul id="insightList" class="insight-list">
+            <li>Graph memory stores screens, actions, and discovered transitions.</li>
+            <li>Known paths to a goal get ranked higher on future runs.</li>
+            <li>Multi-hop graph traversal beats isolated chunk retrieval for repeated tasks.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

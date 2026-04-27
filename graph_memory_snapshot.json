@@ -1,0 +1,327 @@
+{
+  "nodes": [
+    {
+      "node_id": "home_page",
+      "label": "Travel Portal Home",
+      "node_type": "screen",
+      "attributes": {
+        "text_summary": "Travel Portal Home. A landing page with shortcuts into different travel flows.. Filled fields: none.",
+        "visual_summary": "Visible elements: Travel Deals, Plan Trip, My Bookings"
+      }
+    },
+    {
+      "node_id": "weekly_deals",
+      "label": "Travel Deals",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "Browse discounted packages and seasonal offers.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "plan_trip",
+      "label": "Plan Trip",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "Open the full travel planner for flights, hotels, and cars.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "my_bookings",
+      "label": "My Bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "Review existing reservations and receipts.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "bookings_page",
+      "label": "Bookings Dashboard",
+      "node_type": "screen",
+      "attributes": {
+        "text_summary": "Bookings Dashboard. Past trips and invoices appear here.. Filled fields: none.",
+        "visual_summary": "Visible elements: Home"
+      }
+    },
+    {
+      "node_id": "back_home_from_bookings",
+      "label": "Home",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "Return to the main portal.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "planner_page",
+      "label": "Flight Planner",
+      "node_type": "screen",
+      "attributes": {
+        "text_summary": "Flight Planner. A search form for building a new flight itinerary.. Filled fields: none.",
+        "visual_summary": "Visible elements: From City, To City, Search Flights"
+      }
+    },
+    {
+      "node_id": "from_city_input",
+      "label": "From City",
+      "node_type": "element",
+      "attributes": {
+        "role": "input",
+        "description": "Origin airport or city.",
+        "input_key": "from_city",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "to_city_input",
+      "label": "To City",
+      "node_type": "element",
+      "attributes": {
+        "role": "input",
+        "description": "Destination airport or city.",
+        "input_key": "to_city",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "search_flights",
+      "label": "Search Flights",
+      "node_type": "element",
+      "attributes": {
+        "role": "button",
+        "description": "Run the itinerary search.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "results_page",
+      "label": "Flight Results",
+      "node_type": "screen",
+      "attributes": {
+        "text_summary": "Flight Results. Search results for the requested itinerary.. Filled fields: from_city=San Francisco, to_city=New York.",
+        "visual_summary": "Visible elements: Continue to Confirmation"
+      }
+    },
+    {
+      "node_id": "open_confirmation",
+      "label": "Continue to Confirmation",
+      "node_type": "element",
+      "attributes": {
+        "role": "button",
+        "description": "Open the final booking confirmation page.",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "confirmation_page",
+      "label": "Booking Confirmation",
+      "node_type": "screen",
+      "attributes": {
+        "text_summary": "Booking Confirmation. The final confirmation screen with itinerary details.. Filled fields: from_city=San Francisco, to_city=New York.",
+        "visual_summary": "Visible elements: "
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "weekly_deals",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "plan_trip",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "my_bookings",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "clicked",
+      "target_id": "my_bookings",
+      "weight": 2.0,
+      "attributes": {
+        "message": "Navigated to Bookings Dashboard.",
+        "click_count": 1.0,
+        "success_count": 1.0
+      }
+    },
+    {
+      "source_id": "my_bookings",
+      "relation": "leads_to",
+      "target_id": "bookings_page",
+      "weight": 2.0,
+      "attributes": {
+        "message": "Navigated to Bookings Dashboard.",
+        "traversal_count": 1.0,
+        "success_count": 1.0
+      }
+    },
+    {
+      "source_id": "bookings_page",
+      "relation": "contains",
+      "target_id": "back_home_from_bookings",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "bookings_page",
+      "relation": "clicked",
+      "target_id": "back_home_from_bookings",
+      "weight": 2.0,
+      "attributes": {
+        "message": "Navigated to Travel Portal Home.",
+        "click_count": 1.0,
+        "success_count": 1.0
+      }
+    },
+    {
+      "source_id": "back_home_from_bookings",
+      "relation": "leads_to",
+      "target_id": "home_page",
+      "weight": 2.0,
+      "attributes": {
+        "message": "Navigated to Travel Portal Home.",
+        "traversal_count": 1.0,
+        "success_count": 1.0
+      }
+    },
+    {
+      "source_id": "home_page",
+      "relation": "clicked",
+      "target_id": "plan_trip",
+      "weight": 5.0,
+      "attributes": {
+        "message": "Navigated to Flight Planner.",
+        "click_count": 4.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "plan_trip",
+      "relation": "leads_to",
+      "target_id": "planner_page",
+      "weight": 5.0,
+      "attributes": {
+        "message": "Navigated to Flight Planner.",
+        "traversal_count": 4.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "from_city_input",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "to_city_input",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "search_flights",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "filled",
+      "target_id": "from_city_input",
+      "weight": 4.0,
+      "attributes": {
+        "value": "San Francisco",
+        "fill_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "filled",
+      "target_id": "to_city_input",
+      "weight": 4.0,
+      "attributes": {
+        "value": "New York",
+        "fill_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "clicked",
+      "target_id": "search_flights",
+      "weight": 15.0,
+      "attributes": {
+        "message": "The search form is incomplete.",
+        "click_count": 14.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "search_flights",
+      "relation": "leads_to",
+      "target_id": "results_page",
+      "weight": 4.0,
+      "attributes": {
+        "message": "Opened the flight results page.",
+        "traversal_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "results_page",
+      "relation": "contains",
+      "target_id": "open_confirmation",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "results_page",
+      "relation": "clicked",
+      "target_id": "open_confirmation",
+      "weight": 4.0,
+      "attributes": {
+        "message": "Navigated to Booking Confirmation.",
+        "click_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "open_confirmation",
+      "relation": "leads_to",
+      "target_id": "confirmation_page",
+      "weight": 4.0,
+      "attributes": {
+        "message": "Navigated to Booking Confirmation.",
+        "traversal_count": 3.0,
+        "success_count": 3.0
+      }
+    }
+  ]
+}

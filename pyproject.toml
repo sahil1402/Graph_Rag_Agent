@@ -1,0 +1,10 @@
+[project]
+name = "graph-rag-agent"
+version = "0.1.0"
+description = "A from-scratch GraphRAG autonomous agent MVP with persistent graph memory."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
