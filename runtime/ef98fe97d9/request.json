@@ -1,0 +1,377 @@
+{
+  "command": "Book a flight from San Francisco to New York",
+  "targetUrl": "http://127.0.0.1:8011/demo/index.html",
+  "parsedIntent": "book_flight",
+  "task": {
+    "goal": "Reach the final booking confirmation page for a flight search.",
+    "required_inputs": {
+      "from_city": "San Francisco",
+      "to_city": "New York"
+    },
+    "success_screen_id": "confirmation_page"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "home_page",
+        "label": "Travel Portal Home",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Travel Portal Home. A landing page with shortcuts into different travel flows.. Filled fields: none.",
+          "visual_summary": "Visible elements: Travel Deals, Plan Trip, My Bookings"
+        },
+        "degree": 6
+      },
+      {
+        "id": "weekly_deals",
+        "label": "Travel Deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Browse discounted packages and seasonal offers.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "plan_trip",
+        "label": "Plan Trip",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Open the full travel planner for flights, hotels, and cars.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "my_bookings",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Review existing reservations and receipts.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "bookings_page",
+        "label": "Bookings Dashboard",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Bookings Dashboard. Past trips and invoices appear here.. Filled fields: none.",
+          "visual_summary": "Visible elements: Home"
+        },
+        "degree": 3
+      },
+      {
+        "id": "back_home_from_bookings",
+        "label": "Home",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Return to the main portal.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "planner_page",
+        "label": "Flight Planner",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Flight Planner. A search form for building a new flight itinerary.. Filled fields: from_city=San Francisco, to_city=New York.",
+          "visual_summary": "Visible elements: From City, To City, Search Flights"
+        },
+        "degree": 7
+      },
+      {
+        "id": "from_city_input",
+        "label": "From City",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "Origin airport or city.",
+          "input_key": "from_city",
+          "value": "San Francisco"
+        },
+        "degree": 2
+      },
+      {
+        "id": "to_city_input",
+        "label": "To City",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "Destination airport or city.",
+          "input_key": "to_city",
+          "value": "New York"
+        },
+        "degree": 2
+      },
+      {
+        "id": "search_flights",
+        "label": "Search Flights",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "Run the itinerary search.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "results_page",
+        "label": "Flight Results",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Flight Results. Search results for the requested itinerary.. Filled fields: from_city=San Francisco, to_city=New York.",
+          "visual_summary": "Visible elements: Continue to Confirmation"
+        },
+        "degree": 3
+      },
+      {
+        "id": "open_confirmation",
+        "label": "Continue to Confirmation",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "Open the final booking confirmation page.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "confirmation_page",
+        "label": "Booking Confirmation",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Booking Confirmation. The final confirmation screen with itinerary details.. Filled fields: from_city=San Francisco, to_city=New York.",
+          "visual_summary": "Visible elements: "
+        },
+        "degree": 1
+      }
+    ],
+    "edges": [
+      {
+        "id": "home_page|contains|weekly_deals",
+        "source": "home_page",
+        "target": "weekly_deals",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|plan_trip",
+        "source": "home_page",
+        "target": "plan_trip",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|my_bookings",
+        "source": "home_page",
+        "target": "my_bookings",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|clicked|my_bookings",
+        "source": "home_page",
+        "target": "my_bookings",
+        "relation": "clicked",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Bookings Dashboard.",
+          "click_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "my_bookings|leads_to|bookings_page",
+        "source": "my_bookings",
+        "target": "bookings_page",
+        "relation": "leads_to",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Bookings Dashboard.",
+          "traversal_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "bookings_page|contains|back_home_from_bookings",
+        "source": "bookings_page",
+        "target": "back_home_from_bookings",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "bookings_page|clicked|back_home_from_bookings",
+        "source": "bookings_page",
+        "target": "back_home_from_bookings",
+        "relation": "clicked",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Travel Portal Home.",
+          "click_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "back_home_from_bookings|leads_to|home_page",
+        "source": "back_home_from_bookings",
+        "target": "home_page",
+        "relation": "leads_to",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Travel Portal Home.",
+          "traversal_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "home_page|clicked|plan_trip",
+        "source": "home_page",
+        "target": "plan_trip",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Flight Planner.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "plan_trip|leads_to|planner_page",
+        "source": "plan_trip",
+        "target": "planner_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Flight Planner.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|contains|from_city_input",
+        "source": "planner_page",
+        "target": "from_city_input",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|to_city_input",
+        "source": "planner_page",
+        "target": "to_city_input",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|search_flights",
+        "source": "planner_page",
+        "target": "search_flights",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|filled|from_city_input",
+        "source": "planner_page",
+        "target": "from_city_input",
+        "relation": "filled",
+        "weight": 3.0,
+        "attributes": {
+          "value": "San Francisco",
+          "fill_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|filled|to_city_input",
+        "source": "planner_page",
+        "target": "to_city_input",
+        "relation": "filled",
+        "weight": 3.0,
+        "attributes": {
+          "value": "New York",
+          "fill_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|clicked|search_flights",
+        "source": "planner_page",
+        "target": "search_flights",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Opened the flight results page.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "search_flights|leads_to|results_page",
+        "source": "search_flights",
+        "target": "results_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Opened the flight results page.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "results_page|contains|open_confirmation",
+        "source": "results_page",
+        "target": "open_confirmation",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|clicked|open_confirmation",
+        "source": "results_page",
+        "target": "open_confirmation",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Booking Confirmation.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "open_confirmation|leads_to|confirmation_page",
+        "source": "open_confirmation",
+        "target": "confirmation_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Booking Confirmation.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      }
+    ]
+  },
+  "runId": "ef98fe97d9",
+  "artifactsBaseUrl": "/runtime/ef98fe97d9",
+  "screensDir": "D:\\USC\\Graph_Rag_Agent\\runtime\\ef98fe97d9\\screens",
+  "maxSteps": 10
+}

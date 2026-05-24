@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Booking Confirmation</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-screen-id="confirmation_page">
+  <div class="demo-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div class="brand-copy">
+          <strong>Booking Confirmation</strong>
+          <span>Your itinerary is locked and ready.</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="bookings.html">My Bookings</a>
+      </nav>
+    </header>
+
+    <section class="summary-grid">
+      <article class="section-card confirmation-stack">
+        <span class="success-badge">Confirmed</span>
+        <h2 id="finalRoute">Itinerary confirmed</h2>
+        <p id="finalMeta">Your booking details are ready below.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Ticket issued</span>
+          <span class="meta-pill">Priority boarding</span>
+          <span class="meta-pill">Receipt emailed</span>
+        </div>
+      </article>
+
+      <aside class="section-card">
+        <h2>Next steps</h2>
+        <p>Check in 24 hours before departure and review your digital boarding pass in Bookings.</p>
+      </aside>
+    </section>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get("from") || "Unknown origin";
+    const to = params.get("to") || "Unknown destination";
+    const depart = params.get("depart") || "your selected date";
+    document.getElementById("finalRoute").textContent = `${from} to ${to} confirmed`;
+    document.getElementById("finalMeta").textContent = `Departure date: ${depart}. Confirmation code AR-4821.`;
+  </script>
+</body>
+</html>

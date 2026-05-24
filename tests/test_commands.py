@@ -22,6 +22,14 @@ class CommandParserTests(unittest.TestCase):
         self.assertEqual(parsed.intent, "open_deals")
         self.assertEqual(parsed.task.success_screen_id, "deals_page")
 
+    def test_falls_back_to_generic_browser_task(self) -> None:
+        parser = CommandParser()
+        parsed = parser.parse("Fill email is sahil@example.com and password is secret123")
+
+        self.assertEqual(parsed.intent, "general_browser_task")
+        self.assertEqual(parsed.task.required_inputs["email"], "sahil@example.com")
+        self.assertEqual(parsed.task.required_inputs["password"], "secret123")
+
 
 if __name__ == "__main__":
     unittest.main()

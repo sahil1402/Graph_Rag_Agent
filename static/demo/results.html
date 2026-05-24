@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Flight Results</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-screen-id="results_page">
+  <div class="demo-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div class="brand-copy">
+          <strong>Flight Results</strong>
+          <span>Recommended itineraries based on your route.</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Edit Search</a>
+        <a href="bookings.html">My Bookings</a>
+      </nav>
+    </header>
+
+    <section class="summary-grid">
+      <article class="section-card">
+        <div class="route-banner">
+          <div>
+            <strong id="routeTitle">Selected route</strong>
+            <div class="helper" id="routeMeta">Route details will appear here.</div>
+          </div>
+          <button id="continueButton" class="action-button" type="button">Continue to Confirmation</button>
+        </div>
+
+        <div class="content-grid">
+          <article class="trip-card">
+            <h3>Morning Priority</h3>
+            <p>6h 02m nonstop with lounge bundle included.</p>
+          </article>
+          <article class="trip-card">
+            <h3>Business Flex</h3>
+            <p>Refundable fare with extra baggage and earlier boarding.</p>
+          </article>
+        </div>
+      </article>
+
+      <aside class="section-card">
+        <h2>Fare summary</h2>
+        <p>Premium economy with seat selection and same-day confirmation.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Nonstop</span>
+          <span class="meta-pill">Refundable</span>
+          <span class="meta-pill">Priority boarding</span>
+        </div>
+      </aside>
+    </section>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get("from") || "Unknown origin";
+    const to = params.get("to") || "Unknown destination";
+    const depart = params.get("depart") || "Flexible date";
+    document.getElementById("routeTitle").textContent = `${from} to ${to}`;
+    document.getElementById("routeMeta").textContent = `Departing on ${depart}. Premium itinerary ready to confirm.`;
+    document.getElementById("continueButton").addEventListener("click", () => {
+      window.location.href = `confirmation.html?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&depart=${encodeURIComponent(depart)}`;
+    });
+  </script>
+</body>
+</html>

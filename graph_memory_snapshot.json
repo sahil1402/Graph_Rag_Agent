@@ -2,11 +2,11 @@
   "nodes": [
     {
       "node_id": "home_page",
-      "label": "Travel Portal Home",
+      "label": "Book something real enough for the agent to navigate.",
       "node_type": "screen",
       "attributes": {
-        "text_summary": "Travel Portal Home. A landing page with shortcuts into different travel flows.. Filled fields: none.",
-        "visual_summary": "Visible elements: Travel Deals, Plan Trip, My Bookings"
+        "text_summary": "Book something real enough for the agent to navigate.. URL: http://127.0.0.1:8011/demo/index.html. A Aurora Travel Concierge-grade booking for flights, stays, and rewards. Travel Deals Plan Trip My Bookings Real Browser Demo Book something real enough for the agent to navigate. This demo site is built for the GraphRAG browser agent. The agent can click through pages, fill out",
+        "visual_summary": "Visible actions: Travel Deals, Plan Trip, My Bookings, Start a Flight Plan, Browse Deals, Open deals, Plan trip, View bookings"
       }
     },
     {
@@ -64,11 +64,11 @@
     },
     {
       "node_id": "planner_page",
-      "label": "Flight Planner",
+      "label": "Aurora Flight Planner",
       "node_type": "screen",
       "attributes": {
-        "text_summary": "Flight Planner. A search form for building a new flight itinerary.. Filled fields: none.",
-        "visual_summary": "Visible elements: From City, To City, Search Flights"
+        "text_summary": "Aurora Flight Planner. URL: http://127.0.0.1:8011/demo/planner.html. A Flight Planner Build a new itinerary in a few steps. Home Travel Deals My Bookings Planner Search for a direct flight Fill the route below and continue into results. From City To City Depart Date Search Flights The demo agent works best with commands like \"Book a flight from Sa",
+        "visual_summary": "Visible actions: Home, Travel Deals, My Bookings, San Francisco, New York, depart_date, Search Flights"
       }
     },
     {
@@ -79,7 +79,7 @@
         "role": "input",
         "description": "Origin airport or city.",
         "input_key": "from_city",
-        "value": ""
+        "value": "San Francisco"
       }
     },
     {
@@ -90,7 +90,7 @@
         "role": "input",
         "description": "Destination airport or city.",
         "input_key": "to_city",
-        "value": ""
+        "value": "New York"
       }
     },
     {
@@ -106,11 +106,11 @@
     },
     {
       "node_id": "results_page",
-      "label": "Flight Results",
+      "label": "Aurora Flight Results",
       "node_type": "screen",
       "attributes": {
-        "text_summary": "Flight Results. Search results for the requested itinerary.. Filled fields: from_city=San Francisco, to_city=New York.",
-        "visual_summary": "Visible elements: Continue to Confirmation"
+        "text_summary": "Aurora Flight Results. URL: http://127.0.0.1:8011/demo/results.html?from=San%20Francisco&to=New%20York&depart=. A Flight Results Recommended itineraries based on your route. Home Edit Search My Bookings San Francisco to New York Departing on Flexible date. Premium itinerary ready to confirm. Continue to Confirmation Morning Priority 6h 02m nonstop with lounge bundle included. Business Flex",
+        "visual_summary": "Visible actions: Home, Edit Search, My Bookings, Continue to Confirmation"
       }
     },
     {
@@ -126,11 +126,242 @@
     },
     {
       "node_id": "confirmation_page",
-      "label": "Booking Confirmation",
+      "label": "Aurora Booking Confirmation",
       "node_type": "screen",
       "attributes": {
-        "text_summary": "Booking Confirmation. The final confirmation screen with itinerary details.. Filled fields: from_city=San Francisco, to_city=New York.",
-        "visual_summary": "Visible elements: "
+        "text_summary": "Aurora Booking Confirmation. URL: http://127.0.0.1:8011/demo/confirmation.html?from=San%20Francisco&to=New%20York&depart=Flexible%20date. A Booking Confirmation Your itinerary is locked and ready. Home My Bookings Confirmed San Francisco to New York confirmed Departure date: Flexible date. Confirmation code AR-4821. Ticket issued Priority boarding Receipt emailed Next steps Check in 24 hours before departure and re",
+        "visual_summary": "Visible actions: Home, My Bookings"
+      }
+    },
+    {
+      "node_id": "el_47aa8cf3",
+      "label": "Travel Deals",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_fa5f178a",
+      "label": "Plan Trip",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_eaca1ab9",
+      "label": "My Bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_b0bb648c",
+      "label": "Start a Flight Plan",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_d7ab6b87",
+      "label": "Browse Deals",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_4a8d8c28",
+      "label": "Open deals",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_8d7dc7af",
+      "label": "Plan trip",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_70ffc185",
+      "label": "View bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_e54fc14f",
+      "label": "Home",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_f0de03b9",
+      "label": "Travel Deals",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_14faf43e",
+      "label": "My Bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_56714e36",
+      "label": "San Francisco",
+      "node_type": "element",
+      "attributes": {
+        "role": "input",
+        "description": "San Francisco",
+        "input_key": "from_city",
+        "value": "San Francisco"
+      }
+    },
+    {
+      "node_id": "el_854e1636",
+      "label": "New York",
+      "node_type": "element",
+      "attributes": {
+        "role": "input",
+        "description": "New York",
+        "input_key": "to_city",
+        "value": "New York"
+      }
+    },
+    {
+      "node_id": "el_8470b9e4",
+      "label": "depart_date",
+      "node_type": "element",
+      "attributes": {
+        "role": "input",
+        "description": "",
+        "input_key": "depart_date",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_a170c5fa",
+      "label": "Search Flights",
+      "node_type": "element",
+      "attributes": {
+        "role": "button",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_da0dc473",
+      "label": "Home",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_f38e39bf",
+      "label": "Edit Search",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_527a5a62",
+      "label": "My Bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_9da1c525",
+      "label": "Continue to Confirmation",
+      "node_type": "element",
+      "attributes": {
+        "role": "button",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_59e61b60",
+      "label": "Home",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
+      }
+    },
+    {
+      "node_id": "el_9018ad0e",
+      "label": "My Bookings",
+      "node_type": "element",
+      "attributes": {
+        "role": "link",
+        "description": "",
+        "input_key": "",
+        "value": ""
       }
     }
   ],
@@ -211,22 +442,22 @@
       "source_id": "home_page",
       "relation": "clicked",
       "target_id": "plan_trip",
-      "weight": 5.0,
+      "weight": 3.0,
       "attributes": {
         "message": "Navigated to Flight Planner.",
-        "click_count": 4.0,
-        "success_count": 3.0
+        "click_count": 2.0,
+        "success_count": 2.0
       }
     },
     {
       "source_id": "plan_trip",
       "relation": "leads_to",
       "target_id": "planner_page",
-      "weight": 5.0,
+      "weight": 3.0,
       "attributes": {
         "message": "Navigated to Flight Planner.",
-        "traversal_count": 4.0,
-        "success_count": 3.0
+        "traversal_count": 2.0,
+        "success_count": 2.0
       }
     },
     {
@@ -254,6 +485,206 @@
       "source_id": "planner_page",
       "relation": "filled",
       "target_id": "from_city_input",
+      "weight": 3.0,
+      "attributes": {
+        "value": "San Francisco",
+        "fill_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "filled",
+      "target_id": "to_city_input",
+      "weight": 3.0,
+      "attributes": {
+        "value": "New York",
+        "fill_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "clicked",
+      "target_id": "search_flights",
+      "weight": 3.0,
+      "attributes": {
+        "message": "Opened the flight results page.",
+        "click_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "search_flights",
+      "relation": "leads_to",
+      "target_id": "results_page",
+      "weight": 3.0,
+      "attributes": {
+        "message": "Opened the flight results page.",
+        "traversal_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "results_page",
+      "relation": "contains",
+      "target_id": "open_confirmation",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "results_page",
+      "relation": "clicked",
+      "target_id": "open_confirmation",
+      "weight": 3.0,
+      "attributes": {
+        "message": "Navigated to Booking Confirmation.",
+        "click_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "open_confirmation",
+      "relation": "leads_to",
+      "target_id": "confirmation_page",
+      "weight": 3.0,
+      "attributes": {
+        "message": "Navigated to Booking Confirmation.",
+        "traversal_count": 2.0,
+        "success_count": 2.0
+      }
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_47aa8cf3",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_fa5f178a",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_eaca1ab9",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_b0bb648c",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_d7ab6b87",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_4a8d8c28",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_8d7dc7af",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "contains",
+      "target_id": "el_70ffc185",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "home_page",
+      "relation": "clicked",
+      "target_id": "el_b0bb648c",
+      "weight": 4.0,
+      "attributes": {
+        "message": "Clicked el_b0bb648c.",
+        "click_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "el_b0bb648c",
+      "relation": "leads_to",
+      "target_id": "planner_page",
+      "weight": 4.0,
+      "attributes": {
+        "message": "Clicked el_b0bb648c.",
+        "traversal_count": 3.0,
+        "success_count": 3.0
+      }
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_e54fc14f",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_f0de03b9",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_14faf43e",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_56714e36",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_854e1636",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_8470b9e4",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "contains",
+      "target_id": "el_a170c5fa",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "planner_page",
+      "relation": "filled",
+      "target_id": "el_56714e36",
       "weight": 4.0,
       "attributes": {
         "value": "San Francisco",
@@ -264,7 +695,7 @@
     {
       "source_id": "planner_page",
       "relation": "filled",
-      "target_id": "to_city_input",
+      "target_id": "el_854e1636",
       "weight": 4.0,
       "attributes": {
         "value": "New York",
@@ -275,21 +706,21 @@
     {
       "source_id": "planner_page",
       "relation": "clicked",
-      "target_id": "search_flights",
-      "weight": 15.0,
+      "target_id": "el_a170c5fa",
+      "weight": 4.0,
       "attributes": {
-        "message": "The search form is incomplete.",
-        "click_count": 14.0,
+        "message": "Clicked el_a170c5fa.",
+        "click_count": 3.0,
         "success_count": 3.0
       }
     },
     {
-      "source_id": "search_flights",
+      "source_id": "el_a170c5fa",
       "relation": "leads_to",
       "target_id": "results_page",
       "weight": 4.0,
       "attributes": {
-        "message": "Opened the flight results page.",
+        "message": "Clicked el_a170c5fa.",
         "traversal_count": 3.0,
         "success_count": 3.0
       }
@@ -297,31 +728,66 @@
     {
       "source_id": "results_page",
       "relation": "contains",
-      "target_id": "open_confirmation",
+      "target_id": "el_da0dc473",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "results_page",
+      "relation": "contains",
+      "target_id": "el_f38e39bf",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "results_page",
+      "relation": "contains",
+      "target_id": "el_527a5a62",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "results_page",
+      "relation": "contains",
+      "target_id": "el_9da1c525",
       "weight": 1.0,
       "attributes": {}
     },
     {
       "source_id": "results_page",
       "relation": "clicked",
-      "target_id": "open_confirmation",
+      "target_id": "el_9da1c525",
       "weight": 4.0,
       "attributes": {
-        "message": "Navigated to Booking Confirmation.",
+        "message": "Clicked el_9da1c525.",
         "click_count": 3.0,
         "success_count": 3.0
       }
     },
     {
-      "source_id": "open_confirmation",
+      "source_id": "el_9da1c525",
       "relation": "leads_to",
       "target_id": "confirmation_page",
       "weight": 4.0,
       "attributes": {
-        "message": "Navigated to Booking Confirmation.",
+        "message": "Clicked el_9da1c525.",
         "traversal_count": 3.0,
         "success_count": 3.0
       }
+    },
+    {
+      "source_id": "confirmation_page",
+      "relation": "contains",
+      "target_id": "el_59e61b60",
+      "weight": 1.0,
+      "attributes": {}
+    },
+    {
+      "source_id": "confirmation_page",
+      "relation": "contains",
+      "target_id": "el_9018ad0e",
+      "weight": 1.0,
+      "attributes": {}
     }
   ]
 }

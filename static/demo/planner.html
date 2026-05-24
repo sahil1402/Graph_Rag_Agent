@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Flight Planner</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-screen-id="planner_page">
+  <div class="demo-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div class="brand-copy">
+          <strong>Flight Planner</strong>
+          <span>Build a new itinerary in a few steps.</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="deals.html">Travel Deals</a>
+        <a href="bookings.html">My Bookings</a>
+      </nav>
+    </header>
+
+    <section class="section-card">
+      <div class="eyebrow">Planner</div>
+      <h2>Search for a direct flight</h2>
+      <p>Fill the route below and continue into results.</p>
+      <form id="plannerForm">
+        <div class="form-grid">
+          <label>
+            From City
+            <input type="text" name="from_city" data-field-key="from_city" placeholder="San Francisco">
+          </label>
+          <label>
+            To City
+            <input type="text" name="to_city" data-field-key="to_city" placeholder="New York">
+          </label>
+          <label>
+            Depart Date
+            <input type="date" name="depart_date">
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="action-button" type="submit">Search Flights</button>
+        </div>
+        <div class="helper">The demo agent works best with commands like "Book a flight from San Francisco to New York".</div>
+      </form>
+    </section>
+  </div>
+  <script>
+    document.getElementById("plannerForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const from = encodeURIComponent(String(form.get("from_city") || ""));
+      const to = encodeURIComponent(String(form.get("to_city") || ""));
+      const depart = encodeURIComponent(String(form.get("depart_date") || ""));
+      if (!from || !to) {
+        return;
+      }
+      window.location.href = `results.html?from=${from}&to=${to}&depart=${depart}`;
+    });
+  </script>
+</body>
+</html>

@@ -3,114 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GraphRAG Browser Agent</title>
+  <title>GraphRAG Browser Control Room</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="ambient ambient-a"></div>
-  <div class="ambient ambient-b"></div>
-  <main class="app-shell">
-    <section class="hero card">
-      <div>
-        <p class="eyebrow">GraphRAG Autonomous Agent</p>
-        <h1>Type a command. Watch the agent reason through a graph.</h1>
-        <p class="lede">
-          This browser demo turns the original CLI MVP into a command-driven agent workspace with persistent memory,
-          graph-aware decision making, and a live visualization of the graph it builds while working.
+  <div class="backdrop grid-backdrop"></div>
+  <div class="backdrop glow glow-a"></div>
+  <div class="backdrop glow glow-b"></div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GraphRAG Browser Control Room</p>
+        <h1>Real browser runs, captured live, with memory you can actually inspect.</h1>
+        <p class="hero-text">
+          This version drives a real browser session, captures screenshots at every step, and renders the graph with
+          a collision-aware force layout instead of the old fixed-column SVG.
         </p>
       </div>
       <div class="hero-stats">
-        <div class="stat-pill">
-          <span class="stat-label">Memory Nodes</span>
+        <div class="stat-card">
+          <span>Memory nodes</span>
           <strong id="nodeCount">0</strong>
         </div>
-        <div class="stat-pill">
-          <span class="stat-label">Memory Edges</span>
+        <div class="stat-card">
+          <span>Memory edges</span>
           <strong id="edgeCount">0</strong>
         </div>
-        <div class="stat-pill success-pill">
-          <span class="stat-label">Status</span>
+        <div class="stat-card accent-card">
+          <span>Run status</span>
           <strong id="runStatus">Ready</strong>
         </div>
       </div>
     </section>
 
     <section class="workspace">
-      <aside class="left-rail">
-        <div class="card command-card">
-          <h2>Command Console</h2>
-          <label class="input-label" for="commandInput">Tell the agent what to do</label>
-          <textarea id="commandInput" rows="4" placeholder="Book a flight from San Francisco to New York"></textarea>
+      <aside class="left-column">
+        <article class="panel command-panel">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Command Center</p>
+              <h2>Run the agent</h2>
+            </div>
+            <span class="badge live-badge">Actual browser mode</span>
+          </div>
+
+          <label class="field-label" for="targetUrlInput">Target URL</label>
+          <input id="targetUrlInput" type="url" placeholder="http://127.0.0.1:8010/demo/index.html">
+
+          <label class="field-label" for="commandInput">Command</label>
+          <textarea id="commandInput" rows="5" placeholder="Book a flight from San Francisco to New York"></textarea>
+
           <div class="button-row">
-            <button id="runButton" class="primary-button">Run Agent</button>
+            <button id="runButton" class="primary-button">Run Browser Agent</button>
             <button id="resetButton" class="secondary-button">Reset Memory</button>
           </div>
-          <div class="example-wrap">
-            <p class="mini-label">Example commands</p>
-            <div id="exampleButtons" class="example-buttons"></div>
-          </div>
-          <p id="statusMessage" class="status-message">The graph persists across runs, so repeat commands should get smarter.</p>
-        </div>
 
-        <div class="card task-card">
-          <h2>Parsed Task</h2>
-          <div id="taskSummary" class="task-summary empty-state">Run a command to see the parsed intent and task fields.</div>
-        </div>
+          <div class="examples-block">
+            <p class="mini-label">Examples</p>
+            <div id="exampleButtons" class="example-grid"></div>
+          </div>
+
+          <p id="statusMessage" class="status-message">
+            The default target is the local demo travel site, but you can point the agent at another URL too.
+          </p>
+        </article>
+
+        <article class="panel task-panel">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Parsed Intent</p>
+              <h2>Task View</h2>
+            </div>
+          </div>
+          <div id="taskSummary" class="task-summary empty-state">
+            Run a command to see the parsed task, input hints, and target URL.
+          </div>
+        </article>
       </aside>
 
       <section class="center-column">
-        <div class="card browser-card">
+        <article class="panel browser-panel">
           <div class="panel-header">
             <div>
-              <p class="mini-label">Simulated Browser</p>
-              <h2 id="browserTitle">No run yet</h2>
+              <p class="mini-label">Live Capture</p>
+              <h2 id="browserTitle">No browser run yet</h2>
             </div>
-            <span id="intentBadge" class="intent-badge">Idle</span>
+            <span id="intentBadge" class="badge">Idle</span>
           </div>
-          <p id="browserSummary" class="browser-summary">The final observed page and visible elements will appear here.</p>
-          <div id="browserElements" class="browser-elements"></div>
-        </div>
 
-        <div class="card timeline-card">
+          <div class="browser-toolbar">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="browserUrl" class="browser-url">Waiting for a run</div>
+          </div>
+
+          <div class="browser-canvas">
+            <img id="browserImage" alt="Browser capture">
+            <div id="browserPlaceholder" class="browser-placeholder">
+              Screenshots from the real browser run will appear here.
+            </div>
+          </div>
+
+          <p id="browserSummary" class="browser-summary">
+            The selected step and final observation will render as soon as the agent completes a run.
+          </p>
+
+          <div id="stepGallery" class="step-gallery"></div>
+        </article>
+
+        <article class="panel trace-panel">
           <div class="panel-header">
             <div>
-              <p class="mini-label">Execution Trace</p>
-              <h2>Agent Steps</h2>
+              <p class="mini-label">Execution Journal</p>
+              <h2>Step Trace</h2>
             </div>
-            <span id="stepCountBadge" class="intent-badge neutral-badge">0 steps</span>
+            <span id="stepCountBadge" class="badge muted-badge">0 steps</span>
           </div>
-          <div id="stepList" class="step-list empty-state">No run yet. The trace will show how the agent used graph memory to choose actions.</div>
-        </div>
+          <div id="stepList" class="step-list empty-state">
+            No run yet. Once the agent starts, every real browser action will show up here with the chosen reason.
+          </div>
+        </article>
       </section>
 
-      <aside class="right-rail">
-        <div class="card graph-card">
+      <aside class="right-column">
+        <article class="panel graph-panel">
           <div class="panel-header">
             <div>
-              <p class="mini-label">Graph View</p>
-              <h2>Live Graph Memory</h2>
+              <p class="mini-label">Graph Memory</p>
+              <h2>Force Layout View</h2>
             </div>
-            <span class="intent-badge graph-badge">GraphRAG</span>
+            <span class="badge graph-badge">No overlap mode</span>
           </div>
-          <svg id="graphCanvas" viewBox="0 0 680 520" role="img" aria-label="Graph memory visualization"></svg>
-          <div class="legend">
+          <svg id="graphCanvas" viewBox="0 0 860 620" role="img" aria-label="Graph memory visualization"></svg>
+          <div class="graph-legend">
             <span><i class="legend-dot screen-dot"></i>Screen</span>
             <span><i class="legend-dot element-dot"></i>Element</span>
-            <span><i class="legend-dot success-dot"></i>Highlighted path</span>
+            <span><i class="legend-dot path-dot"></i>Active path</span>
           </div>
-        </div>
+          <div id="graphMeta" class="graph-meta">
+            Select a node to inspect its details.
+          </div>
+        </article>
 
-        <div class="card insights-card">
-          <h2>Why It’s More Accurate</h2>
-          <ul id="insightList" class="insight-list">
-            <li>Graph memory stores screens, actions, and discovered transitions.</li>
-            <li>Known paths to a goal get ranked higher on future runs.</li>
-            <li>Multi-hop graph traversal beats isolated chunk retrieval for repeated tasks.</li>
+        <article class="panel insight-panel">
+          <div class="panel-header">
+            <div>
+              <p class="mini-label">Why It Helps</p>
+              <h2>GraphRAG Advantage</h2>
+            </div>
+          </div>
+          <ul class="insight-list">
+            <li>The agent now runs against a real browser session instead of a fake state machine.</li>
+            <li>Successful clicks and transitions are reinforced in graph memory for later runs.</li>
+            <li>The graph only labels important nodes by default, which keeps the layout readable.</li>
           </ul>
-        </div>
+        </article>
       </aside>
     </section>
   </main>
+
   <script src="/app.js"></script>
 </body>
 </html>
