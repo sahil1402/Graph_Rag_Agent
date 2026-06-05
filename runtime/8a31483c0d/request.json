@@ -1,0 +1,893 @@
+{
+  "command": "Book a flight from San Francisco to New York",
+  "targetUrl": "http://127.0.0.1:8011/demo/index.html",
+  "parsedIntent": "book_flight",
+  "task": {
+    "goal": "Reach the final booking confirmation page for a flight search.",
+    "required_inputs": {
+      "from_city": "San Francisco",
+      "to_city": "New York"
+    },
+    "success_screen_id": "confirmation_page"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "home_page",
+        "label": "Book something real enough for the agent to navigate.",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Book something real enough for the agent to navigate.. URL: http://127.0.0.1:8011/demo/index.html. A Aurora Travel Concierge-grade booking for flights, stays, and rewards. Travel Deals Plan Trip My Bookings Real Browser Demo Book something real enough for the agent to navigate. This demo site is built for the GraphRAG browser agent. The agent can click through pages, fill out",
+          "visual_summary": "Visible actions: Travel Deals, Plan Trip, My Bookings, Start a Flight Plan, Browse Deals, Open deals, Plan trip, View bookings"
+        },
+        "degree": 15
+      },
+      {
+        "id": "weekly_deals",
+        "label": "Travel Deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Browse discounted packages and seasonal offers.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "plan_trip",
+        "label": "Plan Trip",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Open the full travel planner for flights, hotels, and cars.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "my_bookings",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Review existing reservations and receipts.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "bookings_page",
+        "label": "Bookings Dashboard",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Bookings Dashboard. Past trips and invoices appear here.. Filled fields: none.",
+          "visual_summary": "Visible elements: Home"
+        },
+        "degree": 3
+      },
+      {
+        "id": "back_home_from_bookings",
+        "label": "Home",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "Return to the main portal.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "planner_page",
+        "label": "Aurora Flight Planner",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Aurora Flight Planner. URL: http://127.0.0.1:8011/demo/planner.html. A Flight Planner Build a new itinerary in a few steps. Home Travel Deals My Bookings Planner Search for a direct flight Fill the route below and continue into results. From City To City Depart Date Search Flights The demo agent works best with commands like \"Book a flight from Sa",
+          "visual_summary": "Visible actions: Home, Travel Deals, My Bookings, San Francisco, New York, depart_date, Search Flights"
+        },
+        "degree": 18
+      },
+      {
+        "id": "from_city_input",
+        "label": "From City",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "Origin airport or city.",
+          "input_key": "from_city",
+          "value": "San Francisco"
+        },
+        "degree": 2
+      },
+      {
+        "id": "to_city_input",
+        "label": "To City",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "Destination airport or city.",
+          "input_key": "to_city",
+          "value": "New York"
+        },
+        "degree": 2
+      },
+      {
+        "id": "search_flights",
+        "label": "Search Flights",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "Run the itinerary search.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "results_page",
+        "label": "Aurora Flight Results",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Aurora Flight Results. URL: http://127.0.0.1:8011/demo/results.html?from=San%20Francisco&to=New%20York&depart=. A Flight Results Recommended itineraries based on your route. Home Edit Search My Bookings San Francisco to New York Departing on Flexible date. Premium itinerary ready to confirm. Continue to Confirmation Morning Priority 6h 02m nonstop with lounge bundle included. Business Flex",
+          "visual_summary": "Visible actions: Home, Edit Search, My Bookings, Continue to Confirmation"
+        },
+        "degree": 9
+      },
+      {
+        "id": "open_confirmation",
+        "label": "Continue to Confirmation",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "Open the final booking confirmation page.",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "confirmation_page",
+        "label": "Aurora Booking Confirmation",
+        "type": "screen",
+        "attributes": {
+          "text_summary": "Aurora Booking Confirmation. URL: http://127.0.0.1:8011/demo/confirmation.html?from=San%20Francisco&to=New%20York&depart=Flexible%20date. A Booking Confirmation Your itinerary is locked and ready. Home My Bookings Confirmed San Francisco to New York confirmed Departure date: Flexible date. Confirmation code AR-4821. Ticket issued Priority boarding Receipt emailed Next steps Check in 24 hours before departure and re",
+          "visual_summary": "Visible actions: Home, My Bookings"
+        },
+        "degree": 4
+      },
+      {
+        "id": "el_47aa8cf3",
+        "label": "Travel Deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_fa5f178a",
+        "label": "Plan Trip",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_eaca1ab9",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_b0bb648c",
+        "label": "Start a Flight Plan",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "el_d7ab6b87",
+        "label": "Browse Deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_4a8d8c28",
+        "label": "Open deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_8d7dc7af",
+        "label": "Plan trip",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_70ffc185",
+        "label": "View bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_e54fc14f",
+        "label": "Home",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_f0de03b9",
+        "label": "Travel Deals",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_14faf43e",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_56714e36",
+        "label": "San Francisco",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "San Francisco",
+          "input_key": "from_city",
+          "value": "San Francisco"
+        },
+        "degree": 2
+      },
+      {
+        "id": "el_854e1636",
+        "label": "New York",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "New York",
+          "input_key": "to_city",
+          "value": "New York"
+        },
+        "degree": 2
+      },
+      {
+        "id": "el_8470b9e4",
+        "label": "depart_date",
+        "type": "element",
+        "attributes": {
+          "role": "input",
+          "description": "",
+          "input_key": "depart_date",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_a170c5fa",
+        "label": "Search Flights",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "el_da0dc473",
+        "label": "Home",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_f38e39bf",
+        "label": "Edit Search",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_527a5a62",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_9da1c525",
+        "label": "Continue to Confirmation",
+        "type": "element",
+        "attributes": {
+          "role": "button",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 3
+      },
+      {
+        "id": "el_59e61b60",
+        "label": "Home",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      },
+      {
+        "id": "el_9018ad0e",
+        "label": "My Bookings",
+        "type": "element",
+        "attributes": {
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": ""
+        },
+        "degree": 1
+      }
+    ],
+    "edges": [
+      {
+        "id": "home_page|contains|weekly_deals",
+        "source": "home_page",
+        "target": "weekly_deals",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|plan_trip",
+        "source": "home_page",
+        "target": "plan_trip",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|my_bookings",
+        "source": "home_page",
+        "target": "my_bookings",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|clicked|my_bookings",
+        "source": "home_page",
+        "target": "my_bookings",
+        "relation": "clicked",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Bookings Dashboard.",
+          "click_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "my_bookings|leads_to|bookings_page",
+        "source": "my_bookings",
+        "target": "bookings_page",
+        "relation": "leads_to",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Bookings Dashboard.",
+          "traversal_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "bookings_page|contains|back_home_from_bookings",
+        "source": "bookings_page",
+        "target": "back_home_from_bookings",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "bookings_page|clicked|back_home_from_bookings",
+        "source": "bookings_page",
+        "target": "back_home_from_bookings",
+        "relation": "clicked",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Travel Portal Home.",
+          "click_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "back_home_from_bookings|leads_to|home_page",
+        "source": "back_home_from_bookings",
+        "target": "home_page",
+        "relation": "leads_to",
+        "weight": 2.0,
+        "attributes": {
+          "message": "Navigated to Travel Portal Home.",
+          "traversal_count": 1.0,
+          "success_count": 1.0
+        }
+      },
+      {
+        "id": "home_page|clicked|plan_trip",
+        "source": "home_page",
+        "target": "plan_trip",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Flight Planner.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "plan_trip|leads_to|planner_page",
+        "source": "plan_trip",
+        "target": "planner_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Flight Planner.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|contains|from_city_input",
+        "source": "planner_page",
+        "target": "from_city_input",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|to_city_input",
+        "source": "planner_page",
+        "target": "to_city_input",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|search_flights",
+        "source": "planner_page",
+        "target": "search_flights",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|filled|from_city_input",
+        "source": "planner_page",
+        "target": "from_city_input",
+        "relation": "filled",
+        "weight": 3.0,
+        "attributes": {
+          "value": "San Francisco",
+          "fill_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|filled|to_city_input",
+        "source": "planner_page",
+        "target": "to_city_input",
+        "relation": "filled",
+        "weight": 3.0,
+        "attributes": {
+          "value": "New York",
+          "fill_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "planner_page|clicked|search_flights",
+        "source": "planner_page",
+        "target": "search_flights",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Opened the flight results page.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "search_flights|leads_to|results_page",
+        "source": "search_flights",
+        "target": "results_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Opened the flight results page.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "results_page|contains|open_confirmation",
+        "source": "results_page",
+        "target": "open_confirmation",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|clicked|open_confirmation",
+        "source": "results_page",
+        "target": "open_confirmation",
+        "relation": "clicked",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Booking Confirmation.",
+          "click_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "open_confirmation|leads_to|confirmation_page",
+        "source": "open_confirmation",
+        "target": "confirmation_page",
+        "relation": "leads_to",
+        "weight": 3.0,
+        "attributes": {
+          "message": "Navigated to Booking Confirmation.",
+          "traversal_count": 2.0,
+          "success_count": 2.0
+        }
+      },
+      {
+        "id": "home_page|contains|el_47aa8cf3",
+        "source": "home_page",
+        "target": "el_47aa8cf3",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_fa5f178a",
+        "source": "home_page",
+        "target": "el_fa5f178a",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_eaca1ab9",
+        "source": "home_page",
+        "target": "el_eaca1ab9",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_b0bb648c",
+        "source": "home_page",
+        "target": "el_b0bb648c",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_d7ab6b87",
+        "source": "home_page",
+        "target": "el_d7ab6b87",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_4a8d8c28",
+        "source": "home_page",
+        "target": "el_4a8d8c28",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_8d7dc7af",
+        "source": "home_page",
+        "target": "el_8d7dc7af",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|contains|el_70ffc185",
+        "source": "home_page",
+        "target": "el_70ffc185",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "home_page|clicked|el_b0bb648c",
+        "source": "home_page",
+        "target": "el_b0bb648c",
+        "relation": "clicked",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_b0bb648c.",
+          "click_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "el_b0bb648c|leads_to|planner_page",
+        "source": "el_b0bb648c",
+        "target": "planner_page",
+        "relation": "leads_to",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_b0bb648c.",
+          "traversal_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "planner_page|contains|el_e54fc14f",
+        "source": "planner_page",
+        "target": "el_e54fc14f",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_f0de03b9",
+        "source": "planner_page",
+        "target": "el_f0de03b9",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_14faf43e",
+        "source": "planner_page",
+        "target": "el_14faf43e",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_56714e36",
+        "source": "planner_page",
+        "target": "el_56714e36",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_854e1636",
+        "source": "planner_page",
+        "target": "el_854e1636",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_8470b9e4",
+        "source": "planner_page",
+        "target": "el_8470b9e4",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|contains|el_a170c5fa",
+        "source": "planner_page",
+        "target": "el_a170c5fa",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "planner_page|filled|el_56714e36",
+        "source": "planner_page",
+        "target": "el_56714e36",
+        "relation": "filled",
+        "weight": 5.0,
+        "attributes": {
+          "value": "San Francisco",
+          "fill_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "planner_page|filled|el_854e1636",
+        "source": "planner_page",
+        "target": "el_854e1636",
+        "relation": "filled",
+        "weight": 5.0,
+        "attributes": {
+          "value": "New York",
+          "fill_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "planner_page|clicked|el_a170c5fa",
+        "source": "planner_page",
+        "target": "el_a170c5fa",
+        "relation": "clicked",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_a170c5fa.",
+          "click_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "el_a170c5fa|leads_to|results_page",
+        "source": "el_a170c5fa",
+        "target": "results_page",
+        "relation": "leads_to",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_a170c5fa.",
+          "traversal_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "results_page|contains|el_da0dc473",
+        "source": "results_page",
+        "target": "el_da0dc473",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|contains|el_f38e39bf",
+        "source": "results_page",
+        "target": "el_f38e39bf",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|contains|el_527a5a62",
+        "source": "results_page",
+        "target": "el_527a5a62",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|contains|el_9da1c525",
+        "source": "results_page",
+        "target": "el_9da1c525",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "results_page|clicked|el_9da1c525",
+        "source": "results_page",
+        "target": "el_9da1c525",
+        "relation": "clicked",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_9da1c525.",
+          "click_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "el_9da1c525|leads_to|confirmation_page",
+        "source": "el_9da1c525",
+        "target": "confirmation_page",
+        "relation": "leads_to",
+        "weight": 5.0,
+        "attributes": {
+          "message": "Clicked el_9da1c525.",
+          "traversal_count": 4.0,
+          "success_count": 4.0
+        }
+      },
+      {
+        "id": "confirmation_page|contains|el_59e61b60",
+        "source": "confirmation_page",
+        "target": "el_59e61b60",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      },
+      {
+        "id": "confirmation_page|contains|el_9018ad0e",
+        "source": "confirmation_page",
+        "target": "el_9018ad0e",
+        "relation": "contains",
+        "weight": 1.0,
+        "attributes": {}
+      }
+    ]
+  },
+  "runId": "8a31483c0d",
+  "artifactsBaseUrl": "/runtime/8a31483c0d",
+  "screensDir": "D:\\USC\\Graph_Rag_Agent\\runtime\\8a31483c0d\\screens",
+  "maxSteps": 10
+}

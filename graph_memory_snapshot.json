@@ -614,22 +614,22 @@
       "source_id": "home_page",
       "relation": "clicked",
       "target_id": "el_b0bb648c",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_b0bb648c.",
-        "click_count": 3.0,
-        "success_count": 3.0
+        "click_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
       "source_id": "el_b0bb648c",
       "relation": "leads_to",
       "target_id": "planner_page",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_b0bb648c.",
-        "traversal_count": 3.0,
-        "success_count": 3.0
+        "traversal_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
@@ -685,44 +685,44 @@
       "source_id": "planner_page",
       "relation": "filled",
       "target_id": "el_56714e36",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "value": "San Francisco",
-        "fill_count": 3.0,
-        "success_count": 3.0
+        "fill_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
       "source_id": "planner_page",
       "relation": "filled",
       "target_id": "el_854e1636",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "value": "New York",
-        "fill_count": 3.0,
-        "success_count": 3.0
+        "fill_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
       "source_id": "planner_page",
       "relation": "clicked",
       "target_id": "el_a170c5fa",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_a170c5fa.",
-        "click_count": 3.0,
-        "success_count": 3.0
+        "click_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
       "source_id": "el_a170c5fa",
       "relation": "leads_to",
       "target_id": "results_page",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_a170c5fa.",
-        "traversal_count": 3.0,
-        "success_count": 3.0
+        "traversal_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
@@ -757,22 +757,22 @@
       "source_id": "results_page",
       "relation": "clicked",
       "target_id": "el_9da1c525",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_9da1c525.",
-        "click_count": 3.0,
-        "success_count": 3.0
+        "click_count": 5.0,
+        "success_count": 5.0
       }
     },
     {
       "source_id": "el_9da1c525",
       "relation": "leads_to",
       "target_id": "confirmation_page",
-      "weight": 4.0,
+      "weight": 6.0,
       "attributes": {
         "message": "Clicked el_9da1c525.",
-        "traversal_count": 3.0,
-        "success_count": 3.0
+        "traversal_count": 5.0,
+        "success_count": 5.0
       }
     },
     {

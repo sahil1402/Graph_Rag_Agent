@@ -1,0 +1,518 @@
+{
+  "report": {
+    "goal": "Reach the final booking confirmation page for a flight search.",
+    "success": true,
+    "steps": [
+      {
+        "step_number": 1,
+        "screen_id": "home_page",
+        "observation_label": "Book something real enough for the agent to navigate.",
+        "observation_summary": "Book something real enough for the agent to navigate.. URL: http://127.0.0.1:8011/demo/index.html. A Aurora Travel Concierge-grade booking for flights, stays, and rewards. Travel Deals Plan Trip My Bookings Real Browser Demo Book something real enough for the agent to navigate. This demo site is built for the GraphRAG browser agent. The agent can click through pages, fill out",
+        "elements": [
+          {
+            "element_id": "el_47aa8cf3",
+            "label": "Travel Deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_47aa8cf3\"]"
+          },
+          {
+            "element_id": "el_fa5f178a",
+            "label": "Plan Trip",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_fa5f178a\"]"
+          },
+          {
+            "element_id": "el_eaca1ab9",
+            "label": "My Bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_eaca1ab9\"]"
+          },
+          {
+            "element_id": "el_b0bb648c",
+            "label": "Start a Flight Plan",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_b0bb648c\"]"
+          },
+          {
+            "element_id": "el_d7ab6b87",
+            "label": "Browse Deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_d7ab6b87\"]"
+          },
+          {
+            "element_id": "el_4a8d8c28",
+            "label": "Open deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_4a8d8c28\"]"
+          },
+          {
+            "element_id": "el_8d7dc7af",
+            "label": "Plan trip",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_8d7dc7af\"]"
+          },
+          {
+            "element_id": "el_70ffc185",
+            "label": "View bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_70ffc185\"]"
+          }
+        ],
+        "visible_elements": [
+          "Travel Deals",
+          "Plan Trip",
+          "My Bookings",
+          "Start a Flight Plan",
+          "Browse Deals",
+          "Open deals",
+          "Plan trip",
+          "View bookings"
+        ],
+        "context_summary": "Book something real enough for the agent to navigate. --contains--> Travel Deals; Book something real enough for the agent to navigate. --contains--> Plan Trip; Book something real enough for the agent to navigate. --contains--> My Bookings",
+        "retrieval_lines": [
+          "Book something real enough for the agent to navigate. --contains--> Travel Deals",
+          "Book something real enough for the agent to navigate. --contains--> Plan Trip",
+          "Book something real enough for the agent to navigate. --contains--> My Bookings",
+          "Book something real enough for the agent to navigate. --clicked--> My Bookings",
+          "Book something real enough for the agent to navigate. --clicked--> Plan Trip"
+        ],
+        "action": {
+          "kind": "click",
+          "target_id": "el_b0bb648c",
+          "value": null,
+          "reason": "Selected using browser-side graph-aware action ranking."
+        },
+        "action_reason": "Selected using browser-side graph-aware action ranking.",
+        "result_message": "Clicked el_b0bb648c.",
+        "next_screen_id": "planner_page",
+        "screenshot_url": "/runtime/8a31483c0d/screens/step-01.png",
+        "current_url": "http://127.0.0.1:8011/demo/index.html"
+      },
+      {
+        "step_number": 2,
+        "screen_id": "planner_page",
+        "observation_label": "Aurora Flight Planner",
+        "observation_summary": "Aurora Flight Planner. URL: http://127.0.0.1:8011/demo/planner.html. A Flight Planner Build a new itinerary in a few steps. Home Travel Deals My Bookings Planner Search for a direct flight Fill the route below and continue into results. From City To City Depart Date Search Flights The demo agent works best with commands like \"Book a flight from Sa",
+        "elements": [
+          {
+            "element_id": "el_e54fc14f",
+            "label": "Home",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_e54fc14f\"]"
+          },
+          {
+            "element_id": "el_f0de03b9",
+            "label": "Travel Deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_f0de03b9\"]"
+          },
+          {
+            "element_id": "el_14faf43e",
+            "label": "My Bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_14faf43e\"]"
+          },
+          {
+            "element_id": "el_56714e36",
+            "label": "San Francisco",
+            "role": "input",
+            "description": "San Francisco",
+            "input_key": "from_city",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_56714e36\"]"
+          },
+          {
+            "element_id": "el_854e1636",
+            "label": "New York",
+            "role": "input",
+            "description": "New York",
+            "input_key": "to_city",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_854e1636\"]"
+          },
+          {
+            "element_id": "el_8470b9e4",
+            "label": "depart_date",
+            "role": "input",
+            "description": "",
+            "input_key": "depart_date",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_8470b9e4\"]"
+          },
+          {
+            "element_id": "el_a170c5fa",
+            "label": "Search Flights",
+            "role": "button",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_a170c5fa\"]"
+          }
+        ],
+        "visible_elements": [
+          "Home",
+          "Travel Deals",
+          "My Bookings",
+          "San Francisco",
+          "New York",
+          "depart_date",
+          "Search Flights"
+        ],
+        "context_summary": "Aurora Flight Planner --contains--> From City; Aurora Flight Planner --contains--> To City; Aurora Flight Planner --contains--> Search Flights",
+        "retrieval_lines": [
+          "Aurora Flight Planner --contains--> From City",
+          "Aurora Flight Planner --contains--> To City",
+          "Aurora Flight Planner --contains--> Search Flights",
+          "Aurora Flight Planner --filled--> From City",
+          "Aurora Flight Planner --filled--> To City"
+        ],
+        "action": {
+          "kind": "type",
+          "target_id": "el_56714e36",
+          "value": "San Francisco",
+          "reason": "Filled San Francisco from parsed command hints."
+        },
+        "action_reason": "Filled San Francisco from parsed command hints.",
+        "result_message": "Filled el_56714e36 with \"San Francisco\".",
+        "next_screen_id": "planner_page",
+        "screenshot_url": "/runtime/8a31483c0d/screens/step-02.png",
+        "current_url": "http://127.0.0.1:8011/demo/planner.html"
+      },
+      {
+        "step_number": 3,
+        "screen_id": "planner_page",
+        "observation_label": "Aurora Flight Planner",
+        "observation_summary": "Aurora Flight Planner. URL: http://127.0.0.1:8011/demo/planner.html. A Flight Planner Build a new itinerary in a few steps. Home Travel Deals My Bookings Planner Search for a direct flight Fill the route below and continue into results. From City To City Depart Date Search Flights The demo agent works best with commands like \"Book a flight from Sa",
+        "elements": [
+          {
+            "element_id": "el_e54fc14f",
+            "label": "Home",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_e54fc14f\"]"
+          },
+          {
+            "element_id": "el_f0de03b9",
+            "label": "Travel Deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_f0de03b9\"]"
+          },
+          {
+            "element_id": "el_14faf43e",
+            "label": "My Bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_14faf43e\"]"
+          },
+          {
+            "element_id": "el_56714e36",
+            "label": "San Francisco",
+            "role": "input",
+            "description": "San Francisco",
+            "input_key": "from_city",
+            "value": "San Francisco",
+            "selector": "[data-graphrag-id=\"el_56714e36\"]"
+          },
+          {
+            "element_id": "el_854e1636",
+            "label": "New York",
+            "role": "input",
+            "description": "New York",
+            "input_key": "to_city",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_854e1636\"]"
+          },
+          {
+            "element_id": "el_8470b9e4",
+            "label": "depart_date",
+            "role": "input",
+            "description": "",
+            "input_key": "depart_date",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_8470b9e4\"]"
+          },
+          {
+            "element_id": "el_a170c5fa",
+            "label": "Search Flights",
+            "role": "button",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_a170c5fa\"]"
+          }
+        ],
+        "visible_elements": [
+          "Home",
+          "Travel Deals",
+          "My Bookings",
+          "San Francisco",
+          "New York",
+          "depart_date",
+          "Search Flights"
+        ],
+        "context_summary": "Aurora Flight Planner --contains--> From City; Aurora Flight Planner --contains--> To City; Aurora Flight Planner --contains--> Search Flights",
+        "retrieval_lines": [
+          "Aurora Flight Planner --contains--> From City",
+          "Aurora Flight Planner --contains--> To City",
+          "Aurora Flight Planner --contains--> Search Flights",
+          "Aurora Flight Planner --filled--> From City",
+          "Aurora Flight Planner --filled--> To City"
+        ],
+        "action": {
+          "kind": "type",
+          "target_id": "el_854e1636",
+          "value": "New York",
+          "reason": "Filled New York from parsed command hints."
+        },
+        "action_reason": "Filled New York from parsed command hints.",
+        "result_message": "Filled el_854e1636 with \"New York\".",
+        "next_screen_id": "planner_page",
+        "screenshot_url": "/runtime/8a31483c0d/screens/step-03.png",
+        "current_url": "http://127.0.0.1:8011/demo/planner.html"
+      },
+      {
+        "step_number": 4,
+        "screen_id": "planner_page",
+        "observation_label": "Aurora Flight Planner",
+        "observation_summary": "Aurora Flight Planner. URL: http://127.0.0.1:8011/demo/planner.html. A Flight Planner Build a new itinerary in a few steps. Home Travel Deals My Bookings Planner Search for a direct flight Fill the route below and continue into results. From City To City Depart Date Search Flights The demo agent works best with commands like \"Book a flight from Sa",
+        "elements": [
+          {
+            "element_id": "el_e54fc14f",
+            "label": "Home",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_e54fc14f\"]"
+          },
+          {
+            "element_id": "el_f0de03b9",
+            "label": "Travel Deals",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_f0de03b9\"]"
+          },
+          {
+            "element_id": "el_14faf43e",
+            "label": "My Bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_14faf43e\"]"
+          },
+          {
+            "element_id": "el_56714e36",
+            "label": "San Francisco",
+            "role": "input",
+            "description": "San Francisco",
+            "input_key": "from_city",
+            "value": "San Francisco",
+            "selector": "[data-graphrag-id=\"el_56714e36\"]"
+          },
+          {
+            "element_id": "el_854e1636",
+            "label": "New York",
+            "role": "input",
+            "description": "New York",
+            "input_key": "to_city",
+            "value": "New York",
+            "selector": "[data-graphrag-id=\"el_854e1636\"]"
+          },
+          {
+            "element_id": "el_8470b9e4",
+            "label": "depart_date",
+            "role": "input",
+            "description": "",
+            "input_key": "depart_date",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_8470b9e4\"]"
+          },
+          {
+            "element_id": "el_a170c5fa",
+            "label": "Search Flights",
+            "role": "button",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_a170c5fa\"]"
+          }
+        ],
+        "visible_elements": [
+          "Home",
+          "Travel Deals",
+          "My Bookings",
+          "San Francisco",
+          "New York",
+          "depart_date",
+          "Search Flights"
+        ],
+        "context_summary": "Aurora Flight Planner --contains--> From City; Aurora Flight Planner --contains--> To City; Aurora Flight Planner --contains--> Search Flights",
+        "retrieval_lines": [
+          "Aurora Flight Planner --contains--> From City",
+          "Aurora Flight Planner --contains--> To City",
+          "Aurora Flight Planner --contains--> Search Flights",
+          "Aurora Flight Planner --filled--> From City",
+          "Aurora Flight Planner --filled--> To City"
+        ],
+        "action": {
+          "kind": "click",
+          "target_id": "el_a170c5fa",
+          "value": null,
+          "reason": "Selected using browser-side graph-aware action ranking."
+        },
+        "action_reason": "Selected using browser-side graph-aware action ranking.",
+        "result_message": "Clicked el_a170c5fa.",
+        "next_screen_id": "results_page",
+        "screenshot_url": "/runtime/8a31483c0d/screens/step-04.png",
+        "current_url": "http://127.0.0.1:8011/demo/planner.html"
+      },
+      {
+        "step_number": 5,
+        "screen_id": "results_page",
+        "observation_label": "Aurora Flight Results",
+        "observation_summary": "Aurora Flight Results. URL: http://127.0.0.1:8011/demo/results.html?from=San%20Francisco&to=New%20York&depart=. A Flight Results Recommended itineraries based on your route. Home Edit Search My Bookings San Francisco to New York Departing on Flexible date. Premium itinerary ready to confirm. Continue to Confirmation Morning Priority 6h 02m nonstop with lounge bundle included. Business Flex",
+        "elements": [
+          {
+            "element_id": "el_da0dc473",
+            "label": "Home",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_da0dc473\"]"
+          },
+          {
+            "element_id": "el_f38e39bf",
+            "label": "Edit Search",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_f38e39bf\"]"
+          },
+          {
+            "element_id": "el_527a5a62",
+            "label": "My Bookings",
+            "role": "link",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_527a5a62\"]"
+          },
+          {
+            "element_id": "el_9da1c525",
+            "label": "Continue to Confirmation",
+            "role": "button",
+            "description": "",
+            "input_key": "",
+            "value": "",
+            "selector": "[data-graphrag-id=\"el_9da1c525\"]"
+          }
+        ],
+        "visible_elements": [
+          "Home",
+          "Edit Search",
+          "My Bookings",
+          "Continue to Confirmation"
+        ],
+        "context_summary": "Aurora Flight Results --contains--> Continue to Confirmation; Aurora Flight Results --clicked--> Continue to Confirmation; Aurora Flight Results --contains--> Home",
+        "retrieval_lines": [
+          "Aurora Flight Results --contains--> Continue to Confirmation",
+          "Aurora Flight Results --clicked--> Continue to Confirmation",
+          "Aurora Flight Results --contains--> Home",
+          "Aurora Flight Results --contains--> Edit Search",
+          "Aurora Flight Results --contains--> My Bookings"
+        ],
+        "action": {
+          "kind": "click",
+          "target_id": "el_9da1c525",
+          "value": null,
+          "reason": "Selected using browser-side graph-aware action ranking."
+        },
+        "action_reason": "Selected using browser-side graph-aware action ranking.",
+        "result_message": "Clicked el_9da1c525.",
+        "next_screen_id": "confirmation_page",
+        "screenshot_url": "/runtime/8a31483c0d/screens/step-05.png",
+        "current_url": "http://127.0.0.1:8011/demo/results.html?from=San%20Francisco&to=New%20York&depart="
+      }
+    ],
+    "final_screen_id": "confirmation_page",
+    "final_observation": {
+      "screen_id": "confirmation_page",
+      "screen_label": "Aurora Booking Confirmation",
+      "text_summary": "Aurora Booking Confirmation. URL: http://127.0.0.1:8011/demo/confirmation.html?from=San%20Francisco&to=New%20York&depart=Flexible%20date. A Booking Confirmation Your itinerary is locked and ready. Home My Bookings Confirmed San Francisco to New York confirmed Departure date: Flexible date. Confirmation code AR-4821. Ticket issued Priority boarding Receipt emailed Next steps Check in 24 hours before departure and re",
+      "visual_summary": "Visible actions: Home, My Bookings",
+      "url": "http://127.0.0.1:8011/demo/confirmation.html?from=San%20Francisco&to=New%20York&depart=Flexible%20date",
+      "title": "Aurora Booking Confirmation",
+      "elements": [
+        {
+          "element_id": "el_59e61b60",
+          "label": "Home",
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": "",
+          "selector": "[data-graphrag-id=\"el_59e61b60\"]"
+        },
+        {
+          "element_id": "el_9018ad0e",
+          "label": "My Bookings",
+          "role": "link",
+          "description": "",
+          "input_key": "",
+          "value": "",
+          "selector": "[data-graphrag-id=\"el_9018ad0e\"]"
+        }
+      ],
+      "screenshot_url": "/runtime/8a31483c0d/screens/step-06.png"
+    }
+  },
+  "browser": {
+    "final_url": "http://127.0.0.1:8011/demo/confirmation.html?from=San%20Francisco&to=New%20York&depart=Flexible%20date",
+    "final_title": "Aurora Booking Confirmation",
+    "screenshot_url": "/runtime/8a31483c0d/screens/step-06.png"
+  }
+}

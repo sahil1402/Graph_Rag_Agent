@@ -152,7 +152,7 @@ h2 {
 
 .workspace {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr) 470px;
+  grid-template-columns: 320px minmax(0, 1.1fr) minmax(440px, 0.96fr);
   gap: 1.4rem;
   align-items: start;
 }
@@ -162,6 +162,7 @@ h2 {
 .right-column {
   display: grid;
   gap: 1.4rem;
+  min-width: 0;
 }
 
 .panel {
@@ -438,13 +439,28 @@ button:hover {
 }
 
 .graph-panel svg {
+  display: block;
   width: 100%;
-  height: 620px;
+  height: clamp(560px, 68vh, 780px);
   border-radius: 24px;
   background:
     radial-gradient(circle at center, rgba(73, 192, 182, 0.08), transparent 58%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.graph-node-label {
+  fill: #edf7ff;
+  paint-order: stroke;
+  stroke: rgba(7, 14, 20, 0.94);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.graph-node-label.selected {
+  font-weight: 700;
 }
 
 .graph-legend {
@@ -495,9 +511,27 @@ button:hover {
   font-size: 15px;
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1540px) {
+  .workspace {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+
+  .right-column {
+    grid-column: 1 / -1;
+  }
+
+  .graph-panel svg {
+    height: clamp(580px, 72vh, 820px);
+  }
+}
+
+@media (max-width: 1180px) {
   .workspace {
     grid-template-columns: 1fr;
+  }
+
+  .right-column {
+    grid-column: auto;
   }
 }
 

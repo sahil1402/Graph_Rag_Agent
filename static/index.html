@@ -134,11 +134,11 @@
           <div class="panel-header">
             <div>
               <p class="mini-label">Graph Memory</p>
-              <h2>Force Layout View</h2>
+              <h2>Adaptive Memory Map</h2>
             </div>
-            <span class="badge graph-badge">No overlap mode</span>
+            <span class="badge graph-badge">Collision balanced</span>
           </div>
-          <svg id="graphCanvas" viewBox="0 0 860 620" role="img" aria-label="Graph memory visualization"></svg>
+          <svg id="graphCanvas" role="img" aria-label="Graph memory visualization"></svg>
           <div class="graph-legend">
             <span><i class="legend-dot screen-dot"></i>Screen</span>
             <span><i class="legend-dot element-dot"></i>Element</span>
@@ -159,7 +159,7 @@
           <ul class="insight-list">
             <li>The agent now runs against a real browser session instead of a fake state machine.</li>
             <li>Successful clicks and transitions are reinforced in graph memory for later runs.</li>
-            <li>The graph only labels important nodes by default, which keeps the layout readable.</li>
+            <li>The graph measures the live panel size and places labels adaptively, so it stays readable on narrower windows.</li>
           </ul>
         </article>
       </aside>
